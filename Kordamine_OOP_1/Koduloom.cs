@@ -32,7 +32,7 @@ namespace Kordamine_OOP_1
         {
             this.nimi = loom.nimi;
             this.varv = loom.varv;
-            this.loomaSugu = loomaSugu;
+            this.loomaSugu = loom.loomaSugu;
             this.kaal = loom.kaal;
             this.vanus = loom.vanus;
             this.elav = loom.elav;

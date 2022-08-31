@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,38 +28,47 @@ namespace Kordamine_OOP_1
         public override void print_Info()
         {
             //string elav1 = "";
-
-            /*if (sugu== 'E')
+            if (elav == true)
             {
-                if (elav == true)
-                {
-                    Console.WriteLine("Elav {0} {1} {2} ta on emane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
-                    //elav1 = "Elav";
-                }
-                else
-                {
-                    Console.WriteLine("Surnud {0} {1} {2} ta on emane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
-                    //elav1="Surnud";
-                }
+                Console.WriteLine("Elav {0} {1} {2} ta on {3} ja teema kaal on {4} ja ta on {5} aastat vana", toug, varv, nimi, loomaSugu, kaal, vanus);
+
             }
-            else if (sugu=='I')
+            else
             {
-                if (elav == true)
+                Console.WriteLine("Surnud {0} {1} {2} ta on {3} ja teema kaal on {4} ja ta on {5} aastat vana", toug, varv, nimi, loomaSugu, kaal, vanus);
+
+            }   
+                /*if (loomaSugu== )
                 {
-                    Console.WriteLine("Elav {0} {1} {2} ta on isane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
-                    //elav1 = "Elav";
+                    if (elav == true)
+                    {
+                        Console.WriteLine("Elav {0} {1} {2} ta on emane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
+                        //elav1 = "Elav";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Surnud {0} {1} {2} ta on emane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
+                        //elav1="Surnud";
+                    }
                 }
-                else
+                else if (loomaSugu==)
                 {
-                    Console.WriteLine("Surnud {0} {1} {2} ta on isane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
-                    //elav1="Surnud";
-                }
-            }*/
+                    if (elav == true)
+                    {
+                        Console.WriteLine("Elav {0} {1} {2} ta on isane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
+                        //elav1 = "Elav";
+                    }
+                    else
+                    {
+                        Console.WriteLine("Surnud {0} {1} {2} ta on isane ja teema kaal on {4} ja ta on {5} aastat vana", toug, elav, varv, nimi, loomaSugu, kaal, vanus);
+                        //elav1="Surnud";
+                    }
+                }*/
 
 
 
+
+            }
 
         }
-
-    }
 }
