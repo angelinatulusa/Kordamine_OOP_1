@@ -13,18 +13,16 @@ namespace Kordamine_OOP_1
         public sugu inimSugu;
         public int synniAasta;
         public int kaal;
-        public string koolinimi;
 
         public Isik()
         { }
 
-        public Isik(string nimi, sugu inimSugu, int synniAasta, int kaal, string koolinimi)
+        public Isik(string nimi, sugu inimSugu, int synniAasta, int kaal)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
             this.synniAasta = synniAasta;
             this.kaal = kaal;
-            this.koolinimi = koolinimi;
         }
 
         public abstract void print_Info();

@@ -10,7 +10,8 @@ namespace Kordamine_OOP_1
     {
         public string eriala;
         public int kursus;
-        public Kutsekooliopilane(string nimi, sugu inimSugu, int synniAasta, int kaal, string eriala, int kursus)
+        public int toetus;
+        public Kutsekooliopilane(string nimi, sugu inimSugu, int synniAasta, int kaal, string eriala, int kursus, int toetus)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
@@ -18,6 +19,7 @@ namespace Kordamine_OOP_1
             this.kaal = kaal;
             this.eriala = eriala;
             this.kursus = kursus;
+            this.toetus = toetus;
         }
 
         public Kutsekooliopilane(Kutsekooliopilane kutsekooliopilane)
@@ -28,11 +30,12 @@ namespace Kordamine_OOP_1
             this.kaal = kutsekooliopilane.kaal;
             this.eriala = kutsekooliopilane.eriala;
             this.kursus = kutsekooliopilane.kursus;
+            this.toetus = kutsekooliopilane.toetus;
         }
 
         public override void print_Info()
         {
-            Console.WriteLine("See on {0}, {1}, ja ta on {2} sünniaasta, tema kaal on {3},ta õpib {4} kursustel, {5} ", nimi, inimSugu, synniAasta, kaal, kursus, eriala );
+            Console.WriteLine("See on {0}, {1}, ja ta on {2} sünniaasta, tema kaal on {3},ta õpib {4} kursustel, ta õpib {5}ks, tema toetus on {6} eurot", nimi, inimSugu, synniAasta, kaal, kursus, eriala, toetus );
         }
     }
 }

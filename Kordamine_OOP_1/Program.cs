@@ -20,7 +20,7 @@ kassKloon.muuda_Sugu(Koduloom.sugu.emane);
 kassKloon.muuda_Elav(false);
 kassKloon.print_Info();*/
 
-Opilane opilane = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte");
+Opilane opilane = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte","head");
 opilane.print_Info();
 Console.WriteLine("Tema vanus on - {0}", opilane.arvutaVanus());
 //opilane.arvutaVanus();
@@ -32,11 +32,13 @@ Console.WriteLine("Tema vanus on - {0}", opilane.arvutaVanus());
 
 Console.WriteLine();
 
-Kutsekooliopilane kutsopilane = new Kutsekooliopilane("Arina", Isik.sugu.naine, 2002, 68,"kook",3);
+Kutsekooliopilane kutsopilane = new Kutsekooliopilane("Arina", Isik.sugu.naine, 2002, 68,"kook",3, 60);
 kutsopilane.print_Info();
 Console.WriteLine("Tema vanus on - {0}", kutsopilane.arvutaVanus());
 
 Console.WriteLine();
 
-Tootaja tootaja = new Tootaja("Kirill", Isik.sugu.mees, 1989, 89, "saali töötaja");
+Tootaja tootaja = new Tootaja("Kirill", Isik.sugu.mees, 1989, 89, "saali töötaja",2500,30,2000,"Kristiine keskus");
+tootaja.print_Info();
+
 
