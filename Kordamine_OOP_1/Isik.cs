@@ -27,10 +27,6 @@ namespace Kordamine_OOP_1
 
         public abstract void print_Info();
 
-        /*public abstract void print_Info()
-        {
-            Console.WriteLine("See on {0}, {1}, ja ta on {2} sünniaasta, tema kaal on {3}",nimi,inimSugu,synniAasta,kaal);
-        }*/
         public void muuda_Sugu(sugu uusSugu) { inimSugu = uusSugu; }
         public void muuda_Nimi(string uusNimi) { nimi = uusNimi; }
         public int arvutaVanus()

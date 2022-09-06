@@ -14,13 +14,14 @@ namespace Kordamine_OOP_1
         public double tulumaks;
         public string asutus;
 
-        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, int palk, int maksuvaba, int tulumaks, string asutus)
+        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, double palk, int maksuvaba, int tulumaks, string asutus)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
             this.synniAasta = synniAasta;
             this.kaal = kaal;
             this.amet = amet;
+            this.palk= palk;    
             this.tulumaks = tulumaks;
             this.maksuvaba = maksuvaba;
             this.asutus = asutus;
@@ -33,6 +34,7 @@ namespace Kordamine_OOP_1
             this.synniAasta = totaja.synniAasta;
             this.kaal = totaja.kaal;
             this.amet = totaja.amet;
+            this.palk = totaja.palk;
             this.maksuvaba = totaja.maksuvaba;
             this.tulumaks = totaja.tulumaks;
             this.asutus = totaja.asutus;
