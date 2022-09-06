@@ -14,7 +14,7 @@ namespace Kordamine_OOP_1
         public int toetus2;
         public int opilaspilet;
         public int lapsed_peres;
-        public Kutsekooliopilane(string nimi, sugu inimSugu, int synniAasta, int kaal, string eriala, int kursus, double toetus, int toetus2, int lapsed_peres)
+        public Kutsekooliopilane(string nimi, sugu inimSugu, int synniAasta, int kaal, string eriala, int kursus, double toetus, int toetus2, int lapsed_peres):base(nimi, inimSugu, synniAasta, kaal)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
@@ -39,30 +39,30 @@ namespace Kordamine_OOP_1
             this.toetus2 = kutsekooliopilane.toetus2;
             this.lapsed_peres = kutsekooliopilane.lapsed_peres;
         }
-        public void eelarve()
+        public int eelarve(int lapsed_peres)
         {
             if (lapsed_peres==1)
             {
-                 opilaspilet = 1;
+                return opilaspilet = 1;
             }
             else if (lapsed_peres == 2)
             {
-                 opilaspilet = 3;
+                return opilaspilet = 3;
             }
             else
             {
-                 opilaspilet = 5;
+                return opilaspilet = 5;
             }
         }
         public void print_Info2()
         {
             if (toetus2==1)
             {
-                Console.WriteLine($"See on {0}, {1}, ja ta on {2} sünniaasta, tema kaal on {3},ta õpib {4} kursustel, ta õpib {5}ks, tema toetus on {6} eurot", nimi, inimSugu, synniAasta, kaal, kursus, eriala, toetus);
+                Console.WriteLine($"See on {nimi}, {inimSugu}, ja ta on {synniAasta} sünniaasta, tema kaal on {kaal},ta õpib {kursus} kursustel, ta õpib {eriala}ks, tema toetus on {toetus} eurot, tema õpilaspiletil on {eelarve(lapsed_peres)} eurot");
             }
             else if (toetus2==2)
             {
-                Console.WriteLine("See on {0}, {1}, ja ta on {2} sünniaasta, tema kaal on {3},ta õpib {4} kursustel, ta õpib {5}ks, ta ei saa toetusi", nimi, inimSugu, synniAasta, kaal, kursus, eriala);
+                Console.WriteLine($"See on {nimi}, {inimSugu}, ja ta on {synniAasta} sünniaasta, tema kaal on {kaal},ta õpib {kursus} kursustel, ta õpib {eriala}ks, ta ei saa toetusi, tema õpilaspiletil on {eelarve(lapsed_peres)} eurot");
             }
             else
             {
@@ -84,6 +84,11 @@ namespace Kordamine_OOP_1
         public void muuda_toetusi(int uusToetus)
         {
             toetus2 = uusToetus;
+        }
+        public void muuda_pere(int uusLapsed_peres)
+        {
+            lapsed_peres = uusLapsed_peres;
+
         }
     }
 }

@@ -20,30 +20,53 @@ kassKloon.muuda_Sugu(Koduloom.sugu.emane);
 kassKloon.muuda_Elav(false);
 kassKloon.print_Info();*/
 
-Opilane opilane = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte","head");
-opilane.print_Info();
-Console.WriteLine("Tema vanus on - {0}", opilane.arvutaVanus());
+Opilane Emma = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte","head");
+//Emma.print_Info();
+//Console.WriteLine("Tema vanus on - {0}", Emma.arvutaVanus());
 
-Opilane opilane2 = new Opilane(opilane);
-opilane2.muuda_Sugu(Isik.sugu.mees);
-opilane2.muuda_Nimi("Vlad");
-opilane2.print_Info();
-Console.WriteLine("Tema vanus on - {0}", opilane.arvutaVanus());
-
-Console.WriteLine();
-
-Kutsekooliopilane kutsopilane = new Kutsekooliopilane("Arina", Isik.sugu.naine, 2002, 68,"kooki",3, 60,1,3);
-kutsopilane.print_Info2();
-Console.WriteLine("Tema vanus on - {0}", kutsopilane.arvutaVanus());
-
-Kutsekooliopilane kutsekooliopilane2 = new Kutsekooliopilane(kutsopilane);
-kutsekooliopilane2.muuda_eriala("tarkvaraarendaja");
-kutsekooliopilane2.muuda_toetusi(2);
-kutsekooliopilane2.print_Info2();
+Opilane Vlad = new Opilane(Emma);
+Vlad.muuda_Sugu(Isik.sugu.mees);
+Vlad.muuda_Nimi("Vlad");
+//Vlad.print_Info();
+//Console.WriteLine("Tema vanus on - {0}", Emma.arvutaVanus());
 
 Console.WriteLine();
 
-Tootaja tootaja = new Tootaja("Kirill", Isik.sugu.mees, 1989, 89, "saali töötaja",2000,300,25,"Kristiine keskus");
-tootaja.print_Info();
-Console.WriteLine("Tema vanus on - {0}", tootaja.arvutaVanus());
+Kutsekooliopilane Arina = new Kutsekooliopilane("Arina", Isik.sugu.naine, 2002, 68,"kooki",3, 60,1,2);
+//Arina.print_Info2();
+//Console.WriteLine("Tema vanus on - {0}", Arina.arvutaVanus());
+
+Kutsekooliopilane Arina2 = new Kutsekooliopilane(Arina);
+Arina2.muuda_eriala("tarkvaraarendaja");
+Arina2.muuda_toetusi(2);
+Arina2.muuda_pere(3);
+Arina2.print_Info2();
+
+Console.WriteLine();
+
+Tootaja Kirill = new Tootaja("Kirill", Isik.sugu.mees, 1989, 89, "saali töötaja",2000,300,25,"Kristiine keskus");
+//Kirill.print_Info();
+//Console.WriteLine("Tema vanus on - {0}", Kirill.arvutaVanus());
+
+List<Isik> inimesed = new List<Isik>();
+inimesed.Add(Emma);
+inimesed.Add(Vlad);
+inimesed.Add(Arina);
+inimesed.Add(Arina2);
+inimesed.Add(Kirill);
+StreamWriter to_file = new StreamWriter(@"..\..\..\Inimesed.txt", false);
+foreach (Isik p in inimesed)
+{
+    p.print_Info();
+
+    to_file.WriteLine(p.nimi + ", " + "tema vanus on "+p.arvutaVanus() + ", " + p.inimSugu + ";");
+}
+to_file.Close();
+StreamReader from_file = new StreamReader(@"..\..\..\Inimesed.txt");
+/*string text = from_file.ReadToEnd();
+Console.WriteLine(text);
+from_file.Close();*/
+List<string> lines = new List<string>();
+int n = from_file.ReadToEnd().Split(new char[] { '\n'}).Length;
+Console.WriteLine("========== " + n + " ==========");
 

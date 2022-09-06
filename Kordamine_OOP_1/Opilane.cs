@@ -12,7 +12,7 @@ namespace Kordamine_OOP_1
         public string koolinimi;
         public string tulemused;
 
-        public Opilane(string nimi, sugu inimSugu, int synniAasta, int kaal,int klass,string koolinimi, string tulemused)
+        public Opilane(string nimi, sugu inimSugu, int synniAasta, int kaal,int klass,string koolinimi, string tulemused):base(nimi, inimSugu, synniAasta, kaal)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;

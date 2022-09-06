@@ -14,7 +14,7 @@ namespace Kordamine_OOP_1
         public double tulumaks;
         public string asutus;
 
-        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, double palk, int maksuvaba, int tulumaks, string asutus)
+        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, double palk, int maksuvaba, int tulumaks, string asutus): base(nimi, inimSugu, synniAasta, kaal)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
