@@ -1,5 +1,2 @@
-Emma, tema vanus on 15, naine;
-Vlad, tema vanus on 15, mees;
-Arina, tema vanus on 20, naine;
-Arina, tema vanus on 20, naine;
-Kirill, tema vanus on 33, mees;
+Dima, mees, 1989, 89, admin, 2000, 300, 25, Kristiine keskus, ;
+Kirill, mees, 1989, 89, saali töötaja, 2000, 300, 25, Kristiine keskus, ;

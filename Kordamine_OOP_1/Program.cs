@@ -20,7 +20,7 @@ kassKloon.muuda_Sugu(Koduloom.sugu.emane);
 kassKloon.muuda_Elav(false);
 kassKloon.print_Info();*/
 
-Opilane Emma = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte","head");
+/*Opilane Emma = new Opilane("Emma",Isik.sugu.naine,2007,59,9,"Ehte","head");
 //Emma.print_Info();
 //Console.WriteLine("Tema vanus on - {0}", Emma.arvutaVanus());
 
@@ -42,24 +42,22 @@ Arina2.muuda_toetusi(2);
 Arina2.muuda_pere(3);
 Arina2.print_Info2();
 
-Console.WriteLine();
+Console.WriteLine();*/
 
 Tootaja Kirill = new Tootaja("Kirill", Isik.sugu.mees, 1989, 89, "saali töötaja",2000,300,25,"Kristiine keskus");
+Tootaja Dima = new Tootaja("Dima", Isik.sugu.mees, 1989, 89, "admin", 2000, 300, 25, "Kristiine keskus");
 //Kirill.print_Info();
 //Console.WriteLine("Tema vanus on - {0}", Kirill.arvutaVanus());
 
-List<Isik> inimesed = new List<Isik>();
-inimesed.Add(Emma);
-inimesed.Add(Vlad);
-inimesed.Add(Arina);
-inimesed.Add(Arina2);
+List<Tootaja> inimesed = new List<Tootaja>();
+inimesed.Add(Dima);
 inimesed.Add(Kirill);
 StreamWriter to_file = new StreamWriter(@"..\..\..\Inimesed.txt", false);
-foreach (Isik p in inimesed)
+foreach (Tootaja p in inimesed)
 {
     p.print_Info();
 
-    to_file.WriteLine(p.nimi + ", " + "tema vanus on "+p.arvutaVanus() + ", " + p.inimSugu + ";");
+    to_file.WriteLine(p.nimi + ", " + p.inimSugu +", " + p.synniAasta + ", " + p.kaal + ", " + p.amet + ", " + p.palk + ", " + p.maksuvaba + ", " + p.tulumaks + ", " + p.asutus + ", " + ";");
 }
 to_file.Close();
 StreamReader from_file = new StreamReader(@"..\..\..\Inimesed.txt");
@@ -69,4 +67,39 @@ from_file.Close();*/
 List<string> lines = new List<string>();
 int n = from_file.ReadToEnd().Split(new char[] { '\n'}).Length;
 Console.WriteLine("========== " + n + " ==========");
+List<Tootaja> tootajad = new List<Tootaja>();
+StreamReader sr = new StreamReader(@"..\..\..\Inimesed.txt");
+string text;
+
+while ((text = sr.ReadLine()) != null)
+{
+    string[] rida = text.Split(',');
+    tootajad.Add(new Tootaja(rida[0], TextFailistEnumSugu(rida[1]), Converter(rida[2]), Converter(rida[3]), rida[4], Converter(rida[5]), Converter(rida[6]), Converter(rida[7]), rida[8]));
+}
+sr.Close();
+
+foreach (var tootaja in tootajad)
+{
+    Console.WriteLine(tootaja.nimi + " " + tootaja.inimSugu + " " + tootaja.synniAasta + " " + tootaja.kaal + " " + tootaja.amet + " " + tootaja.palk + " " + tootaja.maksuvaba + " " + tootaja.tulumaks + " " + tootaja.asutus);
+}
+Console.ReadLine();
+//kui klassis kasutame enam klassi andmete kirjeldamiseks
+Isik.sugu TextFailistEnumSugu(string andmed)
+{
+    switch (andmed)
+    {
+        case "naine":
+            return Isik.sugu.naine;
+        default:
+            return Isik.sugu.mees;
+    }
+}
+
+int Converter(string variable)
+{
+    string num = variable;
+    int Num = Int32.Parse(variable);
+    return Num;
+}
+
 

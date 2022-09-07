@@ -9,12 +9,12 @@ namespace Kordamine_OOP_1
     class Tootaja : Isik
     {
         public string amet;
-        public double palk;
-        public double maksuvaba;
-        public double tulumaks;
+        public int palk;
+        public int maksuvaba;
+        public int tulumaks;
         public string asutus;
 
-        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, double palk, int maksuvaba, int tulumaks, string asutus): base(nimi, inimSugu, synniAasta, kaal)
+        public Tootaja(string nimi, sugu inimSugu, int synniAasta, int kaal, string amet, int palk, int maksuvaba, int tulumaks, string asutus): base(nimi, inimSugu, synniAasta, kaal)
         {
             this.nimi = nimi;
             this.inimSugu = inimSugu;
